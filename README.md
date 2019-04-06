@@ -1,8 +1,8 @@
 # Asteroids 
 
-This is a WebAssembly port of an [Asteroids game written in C](https://github.com/flightcrank/asteroids).
+This is a WebAssembly port of an [Asteroids game written in C](https://github.com/flightcrank/asteroids):
 
-[screenshot]
+![Screenshot of asteroids game](https://raw.githubusercontent.com/robertaboukhalil/wasm-asteroids/master/screenshot.png)
 
 If you're looking for a practical guide to learning WebAssembly, check out my book [Level up with WebAssembly](http://www.levelupwasm.com/).
 
