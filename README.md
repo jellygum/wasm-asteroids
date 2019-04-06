@@ -1,23 +1,41 @@
+# Asteroids 
 
-# ASTEROIDS
+This is a WebAssembly port of an [Asteroids game written in C](https://github.com/flightcrank/asteroids).
 
-This is a recreation of the classic asteroids video game. Implemented in the C
-programming language, using SDL 2 library to display graphics on the screen.
+[screenshot]
 
-To compile you need to have SDL 2 installed on your system and the header files
-available to you operating systems PATH environment variable
+If you're looking for a practical guide to learning WebAssembly, check out my book [Level up with WebAssembly](http://www.levelupwasm.com/).
 
-    gcc -o app main.c vector.c player.c asteroids.c renderer.c -Wall -g -lm `sdl2-config --cflags --libs`
+## Build
 
-## Controls
-* left arrow to rotate left
-* right arrow to rotate right
-* up arrow to apply thrust in the direction you are pointing
-* space to shoot a bullet
-* ESC to exit game
+Fetch Emscripten from DockerHub:
 
-## Images
-![animation](https://i.imgur.com/sV164D6.gif)
+```bash
+docker pull robertaboukhalil/emsdk:1.38.26
+```
 
-![game play](http://i.imgur.com/vg8nlAO.png)
+Create a container from that image:
 
+```bash
+# Create container from that image
+docker run -dt --name wasm robertaboukhalil/emsdk:1.38.26
+
+# Enter the container
+docker exec -it wasm bash
+```
+
+Within the container, fetch the code:
+
+```bash
+git clone "https://github.com/robertaboukhalil/wasm-asteroids.git"
+cd wasm-asteroids
+```
+
+And compile it to WebAssembly:
+
+```bash
+emcc \
+    -o app.html asteroids/*.c \
+    -Wall -g -lm \
+    -s USE_SDL=2
+```
