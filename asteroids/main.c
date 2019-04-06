@@ -74,10 +74,6 @@ void mainloop()
 
 	//draw to the pixel buffer
 	clear_pixels(pixels, 0x00000000);
-	draw_player(pixels, &p);
-	draw_player(pixels, &lives[0]);
-	draw_player(pixels, &lives[1]);
-	draw_player(pixels, &lives[2]);
 	draw_asteroids(pixels, asteroids, ASTEROIDS);
 	update_player(&p);
 	bounds_player(&p);
@@ -100,6 +96,10 @@ void mainloop()
 			}
 		}
 	}
+	draw_player(pixels, &p);
+	draw_player(pixels, &lives[0]);
+	draw_player(pixels, &lives[1]);
+	draw_player(pixels, &lives[2]);
 	
 	int i = 0;
 	struct vector2d translation = {-SCREEN_WIDTH / 2, -SCREEN_HEIGHT / 2};
