@@ -2,6 +2,8 @@
 
 This is a WebAssembly port of an [Asteroids game written in C](https://github.com/flightcrank/asteroids):
 
+**[Live Demo](http://www.levelupwasm.com/apps/asteroids/index.html)**
+
 ![Screenshot of asteroids game](https://raw.githubusercontent.com/robertaboukhalil/wasm-asteroids/master/screenshot.png)
 
 If you're looking for a practical guide to learning WebAssembly, check out my book [Level up with WebAssembly](http://www.levelupwasm.com/).
